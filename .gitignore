@@ -1,0 +1,16 @@
+node_modules/
+tests/output/
+/dist/
+/build/
+/release/
+/releases/
+/OpenCAD.exe
+/electron.exe
+/OpenCAD*.zip
+/OpenCAD.part*
+*.log
+.DS_Store
+Thumbs.db
+
+# Restored automatically from the tracked gzip archive
+/native/libredwg-0.dll

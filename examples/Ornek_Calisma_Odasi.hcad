@@ -1,0 +1,430 @@
+{
+  "version": 1,
+  "name": "Örnek · Çalışma odası",
+  "units": "mm",
+  "activeLayer": "A-DUVAR",
+  "layers": [
+    {
+      "name": "0",
+      "color": "#e4eaf2",
+      "visible": true,
+      "locked": false,
+      "width": 0.25,
+      "lineType": "CONTINUOUS"
+    },
+    {
+      "name": "A-DUVAR",
+      "color": "#ccd8e4",
+      "visible": true,
+      "locked": false,
+      "width": 0.5,
+      "lineType": "CONTINUOUS"
+    },
+    {
+      "name": "A-MOBILYA",
+      "color": "#65bda6",
+      "visible": true,
+      "locked": true,
+      "width": 0.18,
+      "lineType": "CONTINUOUS"
+    },
+    {
+      "name": "A-OLCU",
+      "color": "#d5b880",
+      "visible": true,
+      "locked": false,
+      "width": 0.15,
+      "lineType": "CONTINUOUS"
+    },
+    {
+      "name": "A-YAZI",
+      "color": "#b1c1d1",
+      "visible": true,
+      "locked": false,
+      "width": 0.18,
+      "lineType": "CONTINUOUS"
+    }
+  ],
+  "entities": [
+    {
+      "id": "emuyo0v450",
+      "layer": "A-DUVAR",
+      "type": "polyline",
+      "closed": true,
+      "points": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 6000,
+          "y": 0
+        },
+        {
+          "x": 6000,
+          "y": 4200
+        },
+        {
+          "x": 0,
+          "y": 4200
+        }
+      ]
+    },
+    {
+      "id": "emuyo0v451",
+      "layer": "A-DUVAR",
+      "type": "polyline",
+      "closed": true,
+      "points": [
+        {
+          "x": 180,
+          "y": 180
+        },
+        {
+          "x": 5820,
+          "y": 180
+        },
+        {
+          "x": 5820,
+          "y": 4020
+        },
+        {
+          "x": 180,
+          "y": 4020
+        }
+      ]
+    },
+    {
+      "id": "emuyo0v452",
+      "layer": "A-MOBILYA",
+      "type": "polyline",
+      "closed": true,
+      "points": [
+        {
+          "x": 500,
+          "y": 2700
+        },
+        {
+          "x": 2100,
+          "y": 2700
+        },
+        {
+          "x": 2100,
+          "y": 3500
+        },
+        {
+          "x": 500,
+          "y": 3500
+        }
+      ]
+    },
+    {
+      "id": "emuyo0v453",
+      "layer": "A-MOBILYA",
+      "type": "polyline",
+      "closed": true,
+      "points": [
+        {
+          "x": 3900,
+          "y": 2700
+        },
+        {
+          "x": 5500,
+          "y": 2700
+        },
+        {
+          "x": 5500,
+          "y": 3500
+        },
+        {
+          "x": 3900,
+          "y": 3500
+        }
+      ]
+    },
+    {
+      "id": "emuyo0v454",
+      "layer": "A-MOBILYA",
+      "type": "polyline",
+      "closed": true,
+      "points": [
+        {
+          "x": 600,
+          "y": 450
+        },
+        {
+          "x": 2300,
+          "y": 450
+        },
+        {
+          "x": 2300,
+          "y": 1200
+        },
+        {
+          "x": 600,
+          "y": 1200
+        }
+      ]
+    },
+    {
+      "id": "emuyo0v455",
+      "layer": "A-MOBILYA",
+      "type": "polyline",
+      "closed": true,
+      "points": [
+        {
+          "x": 4500,
+          "y": 400
+        },
+        {
+          "x": 5250,
+          "y": 400
+        },
+        {
+          "x": 5250,
+          "y": 1800
+        },
+        {
+          "x": 4500,
+          "y": 1800
+        }
+      ]
+    },
+    {
+      "id": "emuyo0v456",
+      "layer": "A-MOBILYA",
+      "type": "polyline",
+      "closed": true,
+      "points": [
+        {
+          "x": 2500,
+          "y": 1000
+        },
+        {
+          "x": 3500,
+          "y": 1000
+        },
+        {
+          "x": 3500,
+          "y": 1500
+        },
+        {
+          "x": 2500,
+          "y": 1500
+        }
+      ]
+    },
+    {
+      "id": "emuyo0v457",
+      "layer": "A-MOBILYA",
+      "type": "circle",
+      "center": {
+        "x": 1300,
+        "y": 2250
+      },
+      "radius": 280
+    },
+    {
+      "id": "emuyo0v458",
+      "layer": "A-MOBILYA",
+      "type": "polyline",
+      "closed": true,
+      "points": [
+        {
+          "x": 1050,
+          "y": 3050
+        },
+        {
+          "x": 1550,
+          "y": 3050
+        },
+        {
+          "x": 1550,
+          "y": 3170
+        },
+        {
+          "x": 1050,
+          "y": 3170
+        }
+      ]
+    },
+    {
+      "id": "emuyo0v459",
+      "layer": "A-MOBILYA",
+      "type": "circle",
+      "center": {
+        "x": 4700,
+        "y": 2250
+      },
+      "radius": 280
+    },
+    {
+      "id": "emuyo0v45a",
+      "layer": "A-MOBILYA",
+      "type": "polyline",
+      "closed": true,
+      "points": [
+        {
+          "x": 4450,
+          "y": 3050
+        },
+        {
+          "x": 4950,
+          "y": 3050
+        },
+        {
+          "x": 4950,
+          "y": 3170
+        },
+        {
+          "x": 4450,
+          "y": 3170
+        }
+      ]
+    },
+    {
+      "id": "emuyo0v45b",
+      "layer": "A-MOBILYA",
+      "type": "circle",
+      "center": {
+        "x": 3200,
+        "y": 3100
+      },
+      "radius": 330
+    },
+    {
+      "id": "emuyo0v45c",
+      "layer": "A-MOBILYA",
+      "type": "polyline",
+      "closed": true,
+      "points": [
+        {
+          "x": 2300,
+          "y": 3720
+        },
+        {
+          "x": 2900,
+          "y": 3720
+        },
+        {
+          "x": 2900,
+          "y": 4020
+        },
+        {
+          "x": 2300,
+          "y": 4020
+        }
+      ]
+    },
+    {
+      "id": "emuyo0v45d",
+      "layer": "A-MOBILYA",
+      "type": "polyline",
+      "closed": true,
+      "points": [
+        {
+          "x": 3500,
+          "y": 3720
+        },
+        {
+          "x": 4100,
+          "y": 3720
+        },
+        {
+          "x": 4100,
+          "y": 4020
+        },
+        {
+          "x": 3500,
+          "y": 4020
+        }
+      ]
+    },
+    {
+      "id": "emuyo0v46e",
+      "layer": "A-MOBILYA",
+      "type": "line",
+      "a": {
+        "x": 2400,
+        "y": 200
+      },
+      "b": {
+        "x": 2400,
+        "y": 1100
+      }
+    },
+    {
+      "id": "emuyo0v46f",
+      "layer": "A-MOBILYA",
+      "type": "arc",
+      "center": {
+        "x": 2400,
+        "y": 200
+      },
+      "radius": 900,
+      "start": 0,
+      "end": 1.5707963267948966
+    },
+    {
+      "id": "emuyo0v46g",
+      "layer": "A-YAZI",
+      "type": "text",
+      "pos": {
+        "x": 2250,
+        "y": 1900
+      },
+      "height": 155,
+      "text": "ÇALIŞMA ODASI",
+      "rotation": 0
+    },
+    {
+      "id": "emuyo0v46h",
+      "layer": "A-YAZI",
+      "type": "text",
+      "pos": {
+        "x": 2480,
+        "y": 1660
+      },
+      "height": 110,
+      "text": "25.20 m²",
+      "rotation": 0
+    },
+    {
+      "id": "emuyo0v46i",
+      "layer": "A-OLCU",
+      "type": "dim",
+      "a": {
+        "x": 0,
+        "y": 0
+      },
+      "b": {
+        "x": 6000,
+        "y": 0
+      },
+      "offset": {
+        "x": 0,
+        "y": -550
+      },
+      "height": 100
+    },
+    {
+      "id": "emuyo0v46j",
+      "layer": "A-OLCU",
+      "type": "dim",
+      "a": {
+        "x": 6000,
+        "y": 0
+      },
+      "b": {
+        "x": 6000,
+        "y": 4200
+      },
+      "offset": {
+        "x": 6650,
+        "y": 0
+      },
+      "height": 100
+    }
+  ],
+  "importReport": null
+}

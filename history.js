@@ -1,0 +1,12 @@
+(function(root,factory){if(typeof module==='object')module.exports=factory();else root.CADHistory=factory();})(this,function(){
+'use strict';const clone=x=>JSON.parse(JSON.stringify(x)),equal=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+// Only the in-flight checkpoint is a full snapshot. Committed entries contain changed records.
+class History{constructor(limit=80){this.limit=limit;this.clear();}clear(){this.past=[];this.future=[];this.pending=null;}
+ begin(doc,label='Operation'){this.commit(doc);this.pending={doc:clone(doc),label};}
+ commit(doc){if(!this.pending)return false;const before=this.pending.doc,changes=[],old=new Map(before.entities.map((e,i)=>[e.id,{e,i}])),current=new Map(doc.entities.map((e,i)=>[e.id,{e,i}]));for(const [id,a]of old){const b=current.get(id);if(!b||!equal(a.e,b.e))changes.push({id,before:a,after:b||null});}for(const [id,b]of current)if(!old.has(id))changes.push({id,before:null,after:b});const meta={};for(const k of new Set([...Object.keys(before),...Object.keys(doc)])){if(k!=='entities'&&!equal(before[k],doc[k]))meta[k]={before:before[k],after:doc[k]};}const label=this.pending.label;this.pending=null;if(!changes.length&&!Object.keys(meta).length)return false;this.past.push(clone({label,changes,meta}));if(this.past.length>this.limit)this.past.shift();this.future=[];return true;}
+ apply(doc,entry,side){const target=new Set(entry.changes.map(c=>c.id)),entities=doc.entities.filter(e=>!target.has(e.id)),insert=entry.changes.map(c=>c[side]).filter(Boolean).sort((a,b)=>a.i-b.i);for(const v of insert)entities.splice(v.i,0,clone(v.e));doc.entities=entities;for(const [k,v]of Object.entries(entry.meta)){if(v[side]===undefined)delete doc[k];else doc[k]=clone(v[side]);}return doc;}
+ undo(doc){this.commit(doc);const e=this.past.pop();if(!e)return false;this.apply(doc,e,'before');this.future.push(e);return true;}
+ redo(doc){this.commit(doc);const e=this.future.pop();if(!e)return false;this.apply(doc,e,'after');this.past.push(e);return true;}
+ bytes(){return JSON.stringify(this.past).length+JSON.stringify(this.future).length;}}
+class CommandSession{constructor(){this.generation=0;this.busy=false;this.name='select';}start(name){this.name=name;this.generation++;this.busy=false;}async run(action){if(this.busy)return false;const generation=this.generation;this.busy=true;try{await action();return true;}finally{if(this.generation===generation)this.busy=false;}}}
+return {History,CommandSession};});

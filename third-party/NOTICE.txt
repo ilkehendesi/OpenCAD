@@ -1,0 +1,43 @@
+OpenCAD (formerly Hendese CAD) includes @mlightcad/libredwg-web 0.7.15, based on GNU LibreDWG.
+Unmodified complete upstream source archive: libredwg-web-v0.7.15-source.zip
+Upstream tag: v0.7.15
+Commit: 18588818df66d4258b83fda19aa40fd892cdf49d
+Repository: https://github.com/mlightcad/libredwg-web
+Build instructions: bindings/javascript/README.md in the source archive.
+GPLv3 terms are in COPYING in the source archive and ../LICENSE.
+All application JavaScript/CSS/HTML source is included in resources/app.
+
+DWG test fixture sources:
+https://github.com/LibreDWG/libredwg/tree/master/test/test-data/2000
+https://github.com/LibreDWG/libredwg/tree/master/test/test-data/2013
+https://github.com/LibreDWG/libredwg/tree/master/test/test-data/2018
+
+Other bundled libraries retain their upstream license files:
+- Electron 44.7.0 (MIT and Chromium third-party notices in release root)
+- dxf-parser 1.1.2 (MIT)
+- loglevel (MIT)
+
+Version 0.2 additions:
+- LibreDWG 0.13.4 native Windows x64 dxf2dwg.exe + libredwg-0.dll.
+  Corresponding source: libredwg-0.13.4-source.tar.xz.
+  Release: https://github.com/LibreDWG/libredwg/releases/tag/0.13.4
+  Release ZIP SHA256 cb46bce034296e91cb1a982cd53ec1928b11f4f7f70512dd21513a27959688b5
+- Local libredwg-web patch: convertLayer field spelling changed from
+  plotflockedlag to locked in dist ES module, UMD and lib/converter.
+  This preserves layer locking. All patched source is included.
+- pdf-lib 1.17.1 / @pdf-lib/fontkit 1.1.1 retain MIT license files.
+- DejaVuSans.ttf redistribution license: fonts/LICENSE.txt.
+
+Version 0.4 local patch:
+- lib/converter/entityConverter.js and the used dist/libredwg-web.js ES build:
+  getLayerName/getLtypeName use absolute_ref before the encoded handleref value.
+  Modified JavaScript sources are bundled. No WASM or native binary modification.
+- LibreDWG sample_2000.dwg fixture is copied from the corresponding bundled
+  LibreDWG 0.13.4 GPL source test/test-data/sample_2000.dwg.
+
+GitHub source distribution layout:
+- Complete upstream source archives are supplied with the full portable OpenCAD.zip
+  release under resources/app/third-party/, rather than duplicated in this repository.
+- The local converter sources and both used distribution builds are retained under
+  vendor/libredwg-web-patches/ and restored after npm installation.
+- This repository's application source is at its root (not resources/app).

@@ -1,0 +1,5 @@
+const fs=require('node:fs/promises'),path=require('node:path'),os=require('node:os'),{execFile}=require('node:child_process'),{promisify}=require('node:util');
+const exec=promisify(execFile);
+async function createDWG(dxf,{executable}={}){if(typeof dxf!=='string'||!dxf.includes('AC1015'))throw new Error('The DWG writer requires R2000 DXF input.');const exe=executable||path.join(__dirname,'native/dxf2dwg.exe');await fs.access(exe);const dir=await fs.mkdtemp(path.join(os.tmpdir(),'hendese-dwg-'));
+ try{const source=path.join(dir,'drawing.dxf'),output=path.join(dir,'drawing.dwg');await fs.writeFile(source,dxf,'ascii');await exec(exe,['--as','r2000','-y','-o',output,source],{cwd:dir,timeout:90000,maxBuffer:8*1024*1024,windowsHide:true});const bytes=await fs.readFile(output);if(bytes.length<128||bytes.subarray(0,6).toString()!=='AC1015')throw new Error('The writer did not produce a valid DWG 2000 file.');return bytes;}catch(e){throw new Error('Could not save DWG: '+(e.stderr||e.message||'Unknown error').slice(-1400));}finally{await fs.rm(dir,{recursive:true,force:true});}}
+module.exports={createDWG};

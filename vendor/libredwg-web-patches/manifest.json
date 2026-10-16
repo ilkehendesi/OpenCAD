@@ -1,0 +1,9 @@
+{
+  "version": "0.7.15",
+  "files": {
+    "dist/libredwg-web.js": "58b1ff59b5ec8f9156d6f84f513480cd66da6f303851e4bb0ceb3128a45fe236",
+    "dist/libredwg-web.umd.cjs": "995ca706100c0673347cc84be8d9a68cdda9ee82fdeaca06928d669dfb70789b",
+    "lib/converter/converter.js": "bbf06e84a124b9837d22fb56e6a8bc9305d9a85979f58093396ea11722811935",
+    "lib/converter/entityConverter.js": "29a9e3d19c1e0764adf4c844325a209809a4569ac42190f493f78db89e5a2f48"
+  }
+}

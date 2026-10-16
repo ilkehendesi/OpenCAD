@@ -1,0 +1,25 @@
+{
+  "name": "opencad",
+  "productName": "OpenCAD",
+  "version": "0.9.0",
+  "description": "Local 2D CAD workspace for Windows",
+  "main": "main.cjs",
+  "license": "GPL-3.0-only",
+  "author": "Egemen İlke Kurt",
+  "scripts": {
+    "start": "electron .",
+    "test": "node tests/core.test.cjs && node tests/precision.test.cjs && node tests/polyline-import.test.cjs && node tests/modify.test.cjs && node tests/export.test.cjs && node tests/blocks.test.cjs && node tests/trim.test.cjs && node tests/trim-sweep.test.cjs && node tests/workspace-host.test.cjs",
+    "benchmark": "node tests/benchmark.cjs",
+    "test:large": "node tests/import-large.test.cjs",
+    "postinstall": "node tools/apply-parser-patches.cjs"
+  },
+  "dependencies": {
+    "@mlightcad/libredwg-web": "0.7.15",
+    "@pdf-lib/fontkit": "1.1.1",
+    "dxf-parser": "1.1.2",
+    "pdf-lib": "1.17.1"
+  },
+  "devDependencies": {
+    "electron": "44.7.0"
+  }
+}

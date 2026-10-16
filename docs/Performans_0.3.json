@@ -1,0 +1,25 @@
+{
+  "platform": "linux",
+  "node": "v24.19.0",
+  "scope": "Synthetic LINE geometry; 1000 local box queries. Not Windows UI/real DWG performance.",
+  "results": [
+    {
+      "entities": 10000,
+      "indexBuildMs": 53.95,
+      "queryMedianMs": 0.0023,
+      "queryP95Ms": 0.0066,
+      "checkpointAndCommitMs": 26.96,
+      "retainedUndoBytes": 267,
+      "averageQueryCandidates": 3.8
+    },
+    {
+      "entities": 100000,
+      "indexBuildMs": 1106.28,
+      "queryMedianMs": 0.0026,
+      "queryP95Ms": 0.0074,
+      "checkpointAndCommitMs": 288.59,
+      "retainedUndoBytes": 276,
+      "averageQueryCandidates": 3.98
+    }
+  ]
+}
